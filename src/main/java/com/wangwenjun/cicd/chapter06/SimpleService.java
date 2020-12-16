@@ -17,4 +17,10 @@ public class SimpleService
     {
         SimpleDaoUtils.saveSimple(simple);
     }
+
+    public int deleteSimple(Simple simple)
+    {
+        FinalSimpleDao finalSimpleDao = new FinalSimpleDao();
+        return finalSimpleDao.delete(simple);
+    }
 }

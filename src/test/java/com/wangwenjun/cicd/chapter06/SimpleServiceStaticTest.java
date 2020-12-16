@@ -9,14 +9,15 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.times;
 import static org.powermock.api.mockito.PowerMockito.*;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(SimpleDaoUtils.class)
 public class SimpleServiceStaticTest
 {
     private SimpleService simpleService = new SimpleService();
 
+    @PrepareForTest(SimpleDaoUtils.class)
     @Test
     public void testGetSimpleByName()
     {
@@ -33,6 +34,7 @@ public class SimpleServiceStaticTest
                 .and(equalTo(alex.getAge())));
     }
 
+    @PrepareForTest(SimpleDaoUtils.class)
     @Test
     public void testSaveSimple()
     {
@@ -42,6 +44,6 @@ public class SimpleServiceStaticTest
 
         Simple alex = new Simple("Alex", 36);
         simpleService.saveSimple(alex);
-        PowerMockito.verifyStatic(SimpleDaoUtils.class);
+        PowerMockito.verifyStatic(SimpleDaoUtils.class, times(1));
     }
 }
