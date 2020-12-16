@@ -1,4 +1,3 @@
-package com.wangwenjun.cicd.chapter06;/*
 package com.wangwenjun.cicd.chapter06;
 
 import com.wangwenjun.cicd.chapter05.AccountDao;
@@ -74,4 +73,3 @@ public class PowermockRuleLoginControllerTest
         assertThat(result, is(equalTo("5xx")));
     }
 }
-*/

@@ -11,7 +11,7 @@
     <dependencies>
         <dependency>
             <groupId>com.wangwenjun.books</groupId>
-            <artifactId>cicd-powermock</artifactId>
+            <artifactId>cicd</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
