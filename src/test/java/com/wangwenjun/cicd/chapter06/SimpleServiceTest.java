@@ -25,4 +25,28 @@ public class SimpleServiceTest
 
         assertThat(simpleService.count(), equalTo(10));
     }
+
+    @Test
+    public void testCount2() throws Exception
+    {
+        SimpleDao simpleDao = mock(SimpleDao.class);
+
+        whenNew("com.wangwenjun.cicd.chapter06.SimpleDao").withNoArguments()
+                .thenReturn(simpleDao);
+        when(simpleDao.getCount()).thenReturn(10);
+
+        assertThat(simpleService.count(), equalTo(10));
+    }
+
+    @Test
+    public void testCount3() throws Exception
+    {
+        SimpleDao simpleDao = mock(SimpleDao.class);
+
+        whenNew(SimpleDao.class.getConstructor()).withNoArguments()
+                .thenReturn(simpleDao);
+        when(simpleDao.getCount()).thenReturn(10);
+
+        assertThat(simpleService.count(), equalTo(10));
+    }
 }
