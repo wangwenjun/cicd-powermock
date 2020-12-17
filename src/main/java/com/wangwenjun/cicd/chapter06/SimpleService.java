@@ -23,4 +23,10 @@ public class SimpleService
         FinalSimpleDao finalSimpleDao = new FinalSimpleDao();
         return finalSimpleDao.delete(simple);
     }
+
+    public int updateSimple(Simple simple)
+    {
+        PrivateSimpleDao privateSimpleDao = new PrivateSimpleDao();
+        return privateSimpleDao.updateSimple(simple);
+    }
 }
